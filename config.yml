@@ -1,9 +1,14 @@
+# Site Details
+site-name: "Pynescript"
+
 # Application theme:
 theme:
-  - bgcolor: ""
-  - primary: ""
+  - bgcolor: "#2e2f3e"
+  - primary: "orange"
 
 # Navigation tree:
 nav:
   - Home: "index.py"
   - Contact: "contact.py"
+  - Docs: "docs.py"
+  - References: "reference.py"

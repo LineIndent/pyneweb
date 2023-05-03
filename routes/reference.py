@@ -1,7 +1,7 @@
 import pynecone as pc
     
-@pc.route(route='/contact', title='contact')
-def contact():
+@pc.route(route='/reference', title='reference')
+def reference():
     return pc.vstack(
         pc.vstack(
             pc.hstack(
