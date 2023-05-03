@@ -1,0 +1,9 @@
+# Application theme:
+theme:
+  - bgcolor: ""
+  - primary: ""
+
+# Navigation tree:
+nav:
+  - Home: "index.py"
+  - Contact: "contact.py"
