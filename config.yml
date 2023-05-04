@@ -1,10 +1,10 @@
 # Site Details
-site-name: "Pynescript"
+site-name: "Project Name"
 
 # Application theme:
 theme:
   - bgcolor: "#2e2f3e"
-  - primary: "orange"
+  - primary: "teal"
 
 # Navigation tree:
 nav:
