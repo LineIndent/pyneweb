@@ -1,53 +1,53 @@
 
-<h1 align="center" style="font-size: 5em; font-weight: 100;">pynescript.</h1>
+<h1 align="center" style="font-size: 5em; font-weight: 100;">pyneweb.</h1>
 
 
 
 <div align="center">
-  <a href="https://github.com/LineIndent/pynescript/actions/workflows/build.yml">
-    <img src="https://github.com/LineIndent/pynescript/actions/workflows/build.yml/badge.svg" alt="Build Status">
+  <a href="https://github.com/LineIndent/pyneweb/actions/workflows/build.yml">
+    <img src="https://github.com/LineIndent/pyneweb/actions/workflows/build.yml/badge.svg" alt="Build Status">
   </a>
-  <a href="https://pynescript.readthedocs.io/en/latest/?badge=latest">
-    <img src="https://readthedocs.org/projects/pynescript/badge/?version=latest" alt="Documentation">
+  <a href="https://pyneweb.readthedocs.io/en/latest/?badge=latest">
+    <img src="https://readthedocs.org/projects/pyneweb/badge/?version=latest" alt="Documentation">
   </a>
-  <a href="https://pypi.org/project/pynescript/">
-    <img src="https://img.shields.io/pypi/pyversions/pynescript.svg" alt="Python version">
+  <a href="https://pypi.org/project/pyneweb/">
+    <img src="https://img.shields.io/pypi/pyversions/pyneweb.svg" alt="Python version">
   </a>
-  <a href="https://pypi.org/project/pynescript/">
-    <img src="https://img.shields.io/pypi/v/pynescript.svg" alt="PyPI version">
+  <a href="https://pypi.org/project/pyneweb/">
+    <img src="https://img.shields.io/pypi/v/pyneweb.svg" alt="PyPI version">
   </a>
-  <a href="https://pypi.org/project/pynescript/">
-    <img src="https://img.shields.io/pypi/dm/pynescript.svg" alt="PyPI downloads">
+  <a href="https://pypi.org/project/pyneweb/">
+    <img src="https://img.shields.io/pypi/dm/pyneweb.svg" alt="PyPI downloads">
   </a>
 </div>
 
 <br>
 
 <p align="center">
-Pynescript is a Python web boilerplate project designed to provide a solid foundation for building web applications with Python and Flet. The project comes pre-configured with a range of tools and features to make it easy for developers to get started building their applications, without the need to spend time setting up infrastructure or configuring tools.</p>
+Pyneweb is a Python web boilerplate project designed to provide a solid foundation for building web applications with Python and Flet. The project comes pre-configured with a range of tools and features to make it easy for developers to get started building their applications, without the need to spend time setting up infrastructure or configuring tools.</p>
 
 
 
 ## 1. Installation
 
-To use Pynescript, you need to have the following installed:
+To use Pyneweb, you need to have the following installed:
 
 -   Latest version of Pynecone
 -   Python 3.7+
 
-If you don't have Pynecone installed, installing Pynescript automatically installs it for you. You can install Pynescript using the following command:
+If you don't have Pynecone installed, installing Pyneweb automatically installs it for you. You can install Pyneweb using the following command:
 ```
-$ pip install pynescript
+$ pip install pyneweb
 ```
 
 
 
 ## 2. Application Setup
 
-After installing Pynescript, you can test if it's working properly by running the following command:
+After installing Pyneweb, you can test if it's working properly by running the following command:
 
 ```
-$ pynescript-init
+$ pyneweb-init
 ```
 
 If the package was installed correctly, a directory named ```logic``` along with a file called ```config.yml``` will be generated inside the root directory.
@@ -86,7 +86,7 @@ Contributions are highly encouraged and welcomed.
 
 ## License
 
-Pynescript is open-source and licensed under the [MIT License](LICENSE).
+Pyneweb is open-source and licensed under the [MIT License](LICENSE).
 
 
 
