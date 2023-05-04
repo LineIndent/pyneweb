@@ -38,11 +38,11 @@ def init():
 
 
 @click.group()
-def pynescript():
+def pyneweb():
     pass
 
 
-pynescript.add_command(init)
+pyneweb.add_command(init)
 
 if __name__ == "__main__":
-    pynescript()
+    pyneweb()

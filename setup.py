@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="pyneweb",
-    version="0.1.0",
+    version="0.2.0",
     author="S. Ahmad P. Hakimi",
     author_email="pourhakimi@pm.me",
     description="Web Boilerplate for Pynecone",
@@ -17,7 +17,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     entry_points={
-        "console_scripts": ["pynescript-init=logic.cli:init"],
+        "console_scripts": ["pyneweb-init=logic.cli:init"],
     },
     keywords=["python web template", "web application", "development"],
 )
