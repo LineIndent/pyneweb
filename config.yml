@@ -1,5 +1,5 @@
 # Site Details
-site-name: "Project Name"
+site-name: "Pynescript"
 
 # Application theme:
 theme:
@@ -10,4 +10,5 @@ theme:
 nav:
   - Home: "index.py"
   - Contact: "contact.py"
+  - About: "about.py"
   - Docs: "docs.py"

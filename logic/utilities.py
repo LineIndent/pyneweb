@@ -59,6 +59,7 @@ def {fn_name}():
                             tag="hamburger",
                             font_size="xl",
                             cursor="pointer",
+                            color="white",
                             on_click=lambda: State.left,
                         ),
                         width="2rem",
@@ -70,6 +71,7 @@ def {fn_name}():
                         # end #
                         font_size=["lg", "lg", "lg", "xl", "xl"],
                         font_weight="700",
+                        color="white",
                     ),
                     spacing="2rem",
                 ),
@@ -95,16 +97,16 @@ def {fn_name}():
                     spacing="2rem",
                 ),
                 padding=[
-                    "10px 5px",
-                    "10px 5px",
-                    "10px 5px",
+                    "0px 5px",
+                    "0px 5px",
+                    "0px 5px",
                     "10px 5px",
                     "10px 100px",
                 ],
                 width="100%",
-                transition="all 100ms ease",
+                transition="height 150ms ease",
                 overflow="hidden",
-                display=["None", "None", "None", "flex", "flex"],
+                height= ["0", "0", "0", "3rem", "3rem",],
                 spacing="1.25rem",
             ),
             # start #
@@ -136,10 +138,16 @@ def navigation_list():
             filename = os.path.splitext(file)[0]
             if filename == "index":
                 cap = filename.capitalize()
-                string = f"""pc.link('{cap}', href='/', font_size="12px", font_weight="600",),"""
+                string = f"""pc.link('{cap}', href='/', font_size="12px", color="white", font_weight="600",
+                opacity=["0", "0", "0", "100", "100"],
+                transition="opacity 700ms ease",
+                ),"""
             else:
                 cap = filename.capitalize()
-                string = f"""pc.link('{cap}', href='/{filename}', font_size="12px", font_weight="600",),"""
+                string = f"""pc.link('{cap}', href='{filename}', font_size="12px", font_weight="600", color="white",
+                opacity=["0", "0", "0", "100", "100"],
+                transition="opacity 700ms ease",
+                ),"""
 
             route_list.append(string)
 
@@ -178,4 +186,27 @@ class State(pc.State):
         self.show_left = not (self.show_left)
 """
 
+    return string
+
+
+############################################
+######### Create config file YAML ##########
+############################################
+
+
+def set_up_yaml_file():
+    string = """
+site-name: ""
+repo-url: ""
+
+theme:
+  - bgcolor: "#2e2f3e"
+  - primary: ""
+
+nav:
+  - Home: "index.py"
+  - About: "about.py"
+  - Contact: "contact.py"
+
+"""
     return string
