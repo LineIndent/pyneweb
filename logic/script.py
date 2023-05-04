@@ -4,7 +4,6 @@ from logic.utilities import (
     navigation,
     navigation_list,
     side_navigation_list,
-    app_states,
 )
 import pynecone as pc
 
@@ -123,14 +122,6 @@ def set_default_methods_script(docs: dict):
 
 
 def update_init_file():
-    #
-    for file in os.listdir("logic"):
-        path = os.path.join("logic", file)
-        if not os.path.isdir(path) and path != "logic/states.py":
-            with open("./logic/states.py", "w") as f:
-                string = app_states()
-                f.write(string)
-
     # Update the __init__.py file to import the corresponding  routes in the main aplication page
     with open("./routes/__init__.py", "w") as f:
         for file in os.listdir("routes"):
