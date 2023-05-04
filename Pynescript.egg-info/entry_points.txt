@@ -1,2 +1,0 @@
-[console_scripts]
-pynescript-init = logic.cli:init

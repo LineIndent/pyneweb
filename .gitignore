@@ -1,3 +1,6 @@
 .web
 pynecone.db
 venv
+dist
+build
+pyneweb.egg-info
