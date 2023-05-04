@@ -7,7 +7,9 @@ import os
 
 def navigation(route, title, fn_name):
     string = f"""import pynecone as pc
-    
+
+from logic.states import State
+
 @pc.route(route='/{route}', title='{title}')
 def {fn_name}():
     return pc.vstack(
@@ -23,7 +25,9 @@ def {fn_name}():
                                 size="md", 
                                 color="white",
                             ),
-                            bg="#2e2f3e",
+                            # start #
+                            
+                            # end #
                             width="100%",
                             padding="20px 5%",
                         ),
@@ -39,7 +43,7 @@ def {fn_name}():
                         padding="0",
                     ),
                     pc.drawer_footer(
-                        pc.button("Close", on_click=State.right)
+                        pc.button("Close", on_click=State.left)
                     ),
                     bg="#2e2f3e",
                 ),
@@ -54,7 +58,8 @@ def {fn_name}():
                         pc.icon(
                             tag="hamburger",
                             font_size="xl",
-                            on_click=lambda: State.show_left,
+                            cursor="pointer",
+                            on_click=lambda: State.left,
                         ),
                         width="2rem",
                         padding_left="10px",
@@ -102,15 +107,19 @@ def {fn_name}():
                 display=["None", "None", "None", "flex", "flex"],
                 spacing="1.25rem",
             ),
-            width="100%",
             # start #
-
+            
             # end #
-            box_shadow="0px 10px 20px 0px rgba(0, 0, 0, 0.35)",
-            height="100vh",
-            box_sizing="border-box",
-            overflow="hidden",
-        )
+            width="100%",
+        ),
+        width="100%",
+        # start #
+
+        # end #
+        box_shadow="0px 10px 20px 0px rgba(0, 0, 0, 0.35)",
+        height="100vh",
+        box_sizing="border-box",
+        overflow="hidden",
     )
 """
     return string
@@ -165,7 +174,7 @@ class State(pc.State):
     # Main state where all other states inherit from.#
     show_left: bool = False
 
-    def right(self):
+    def left(self):
         self.show_left = not (self.show_left)
 """
 

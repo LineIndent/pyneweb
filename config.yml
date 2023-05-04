@@ -11,4 +11,3 @@ nav:
   - Home: "index.py"
   - Contact: "contact.py"
   - Docs: "docs.py"
-  - References: "reference.py"

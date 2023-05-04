@@ -4,6 +4,7 @@ from logic.utilities import (
     navigation,
     navigation_list,
     side_navigation_list,
+    app_states,
 )
 import pynecone as pc
 
@@ -57,7 +58,15 @@ def set_default_methods_script(docs: dict):
 
     side_nav = "\n".join(side_navigation_list())
 
-    theme: list = [site_name, side_nav, site_name, nav, primary_color, bgcolor]
+    theme: list = [
+        site_name,
+        primary_color,
+        side_nav,
+        site_name,
+        nav,
+        primary_color,
+        bgcolor,
+    ]
 
     # 2. Loop through navigation tree and append the file_list with the filepaths
     for page in docs["nav"]:
@@ -121,6 +130,15 @@ def set_default_methods_script(docs: dict):
             pass
 
 
+def app_state_managment():
+    for file in os.listdir("logic"):
+        path = os.path.join("routes", file)
+        if not os.path.isdir(path) and path != "logic/states.py":
+            with open("./logic/states.py", "w") as f:
+                string = app_states()
+                f.write(string)
+
+
 def update_init_file():
     # Update the __init__.py file to import the corresponding  routes in the main aplication page
     with open("./routes/__init__.py", "w") as f:
@@ -165,6 +183,13 @@ def script(app: pc.Component):
     # 5. Update the `__init__.py` file
     try:
         update_init_file()
+
+    except Exception as err:
+        print(err)
+
+    # 6. Create the State class
+    try:
+        app_state_managment()
 
     except Exception as err:
         print(err)
