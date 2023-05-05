@@ -1,5 +1,5 @@
 """
-Utiltities: Provides chunks of code as supplement to the main scrip inside `script.py`.
+Utilities: Provides chunks of code as supplement to the main scrip inside `script.py`.
 """
 
 import os
