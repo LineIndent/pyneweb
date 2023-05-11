@@ -13,6 +13,7 @@ from logic.states import State
 @pc.route(route='/{route}', title='{title}')
 def {fn_name}():
     return pc.vstack(
+        # The drawer component for small breakpoints #
         pc.drawer(
             pc.drawer_overlay(
                 pc.drawer_content(

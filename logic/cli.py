@@ -9,16 +9,18 @@ def initialize_pynecone_file_script():
     target_dir = None
     target_file = None
 
+    base = os.path.basename(os.path.dirname(os.path.abspath(__file__)))
+
     for dir in os.listdir():
-        if dir != "logic" and os.path.isdir(dir):
+        if dir == base:
             target_dir = dir
-            break
 
     if target_dir:
         for file in os.listdir(target_dir):
-            if file != "__init__.py":
+            file_path = os.path.join(target_dir, file)
+            if os.path.isfile(file_path) and file != "__init__.py":
                 target_file = file
-                break
+                print(target_file)
 
     if target_file:
         target_file_path = os.path.join(target_dir, target_file)
