@@ -223,10 +223,9 @@ import pynecone as pc
 from logic.script import script
 from logic.states import State
 
-# Import pages from routes dir
-from routes import *
+''' Comment out the the routes module when you've run your script at least once '''
+#from routes import *
 
-# Setup for script
 app = pc.App(state=State)
 app.compile()
 script(app)
