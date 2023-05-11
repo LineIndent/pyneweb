@@ -1,17 +1,34 @@
-import click
-from click.testing import CliRunner
 import os
-from logic.utilities import set_up_yaml_file, set_up_pynecone_file
-from pathlib import Path
+from logic.cli import initialize_pynecone_file_script
+from logic.utilities import set_up_pynecone_file
+import unittest
 
 
-def test_init_command():
-    runner = CliRunner()
-    result = runner.invoke(init)
-    assert result.exit_code == 0
-    assert "Generated 4 files in the 'logic' directory:" in result.output
-    assert "__init__.py" in result.output
-    assert "script.py" in result.output
-    assert "utilities.py" in result.output
-    assert "states.py" in result.output
-    assert "Status: OK" in result.output
+class TestCLI(unittest.TestCase):
+    def test_initialize_pynecone_file_script(self):
+        # Create a temporary directory for testing
+        test_dir = "test_dir"
+        os.mkdir(test_dir)
+        os.chdir(test_dir)
+
+        # Create a file for testing
+        target_dir = "test_dir"
+        target_file = "test_file.py"
+        os.mkdir(target_dir)
+        file_path = os.path.join(target_dir, target_file)
+        with open(file_path, "w") as f:
+            f.write("")
+
+        # Test the function
+        initialize_pynecone_file_script()
+
+        # Assert the changes made by the function
+        with open(file_path, "r") as f:
+            contents = f.read()
+            self.assertEqual(contents, set_up_pynecone_file())
+
+        # Clean up the test environment
+        os.remove(file_path)
+        os.rmdir(target_dir)
+        os.chdir("..")
+        os.rmdir(test_dir)
