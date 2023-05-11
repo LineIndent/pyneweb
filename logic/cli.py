@@ -9,7 +9,7 @@ def initialize_pynecone_file_script():
     target_dir = None
     target_file = None
 
-    base = os.path.basename(os.path.dirname(os.path.abspath(__file__)))
+    base = os.path.basename(os.getcwd())
 
     for dir in os.listdir():
         if dir == base:
@@ -20,14 +20,12 @@ def initialize_pynecone_file_script():
             file_path = os.path.join(target_dir, file)
             if os.path.isfile(file_path) and file != "__init__.py":
                 target_file = file
-                print(target_file)
 
     if target_file:
         target_file_path = os.path.join(target_dir, target_file)
         string = set_up_pynecone_file()
         with open(target_file_path, "w") as f:
             f.write(string)
-            pass
 
     else:
         pass
