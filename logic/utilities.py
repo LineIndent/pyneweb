@@ -210,3 +210,26 @@ nav:
 
 """
     return string
+
+
+############################################
+######### Update pynecone init file ########
+############################################
+
+
+def set_up_pynecone_file():
+    string = """# Pynecone && Pyneweb modules
+import pynecone as pc
+from logic.script import script
+from logic.states import State
+
+# Import pages from routes dir
+from routes import *
+
+# Setup for script
+app = pc.App(state=State)
+app.compile()
+script(app)
+"""
+
+    return string

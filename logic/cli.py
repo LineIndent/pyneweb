@@ -1,4 +1,5 @@
 import click
+import subprocess
 from logic.utilities import set_up_yaml_file
 from pathlib import Path
 
@@ -34,6 +35,14 @@ def init():
     click.echo(f"Generated {len(file_list)} files in the 'logic' directory:")
     for files in file_list:
         click.echo(f"● {files}")
+    click.echo()
+
+    # Run the 'pc init' command
+    result = subprocess.run(["pc", "init"], capture_output=True, text=True)
+    if result.returncode == 0:
+        click.echo("Command 'pc init' executed successfully.")
+    else:
+        click.echo("Command 'pc init' execution failed.")
     click.echo()
 
 

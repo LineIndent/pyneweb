@@ -4,6 +4,7 @@ from logic.utilities import (
     navigation,
     navigation_list,
     side_navigation_list,
+    set_up_pynecone_file,
 )
 import pynecone as pc
 
@@ -140,6 +141,32 @@ def update_init_file():
                 f.write(string)
 
 
+def initialize_pynecone_file_script():
+    target_dir = None
+    target_file = None
+
+    for dir in os.listdir():
+        if dir != "logic" and os.path.isdir(dir):
+            target_dir = dir
+            break
+
+    if target_dir:
+        for file in os.listdir(target_dir):
+            if file != "__init__.py":
+                target_file = file
+                break
+
+    if target_file:
+        target_file_path = os.path.join(target_dir, target_file)
+        string = set_up_pynecone_file()
+        with open(target_file_path, "w") as f:
+            f.write(string)
+            pass
+
+    else:
+        pass
+
+
 # Main automation script...
 def script(app: pc.Component):
     # 1. Store the YAML data as a python dict object
@@ -173,6 +200,14 @@ def script(app: pc.Component):
     # 5. Update the `__init__.py` file
     try:
         update_init_file()
+
+    except Exception as err:
+        print(err)
+
+    # 6. init pyencone files
+    try:
+        if not os.path.exists("logic"):
+            initialize_pynecone_file_script()
 
     except Exception as err:
         print(err)
