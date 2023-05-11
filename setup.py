@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="pyneweb",
-    version="0.5.3",
+    version="0.5.4",
     author="S. Ahmad P. Hakimi",
     author_email="pourhakimi@pm.me",
     description="Web Boilerplate for Pynecone",

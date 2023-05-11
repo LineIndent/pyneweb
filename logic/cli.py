@@ -62,19 +62,14 @@ def init():
     click.echo(f"Generated {len(file_list)} files in the 'logic' directory:")
     for files in file_list:
         click.echo(f"● {files}")
-    click.echo()
+
     click.echo("Status: OK")
     click.echo()
 
     # Run the 'pc init' command
     subprocess.run(["pc", "init"], capture_output=True, text=True)
-    click.echo()
-    click.echo("Command 'pc init' executed successfully.")
-    click.echo()
-    click.echo("Setting up the default application layout ...")
     initialize_pynecone_file_script()
-    click.echo()
-    click.echo("Status: OK")
+    click.echo("Command 'pc init' executed successfully.")
 
 
 @click.group()
